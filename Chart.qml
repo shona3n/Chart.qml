@@ -1339,7 +1339,9 @@ Canvas{
 
         function calculateScale(drawingHeight,maxSteps,minSteps,maxValue,minValue,labelTemplateString){
                 var graphMin,graphMax,graphRange,stepValue,numberOfSteps,valueRange,rangeOrderOfMagnitude,decimalNum;
-
+                if (maxValue === minValue) {
+                    maxValue = maxValue + 10
+                }
                 valueRange = maxValue - minValue;
 
                 rangeOrderOfMagnitude = calculateOrderOfMagnitude(valueRange);
